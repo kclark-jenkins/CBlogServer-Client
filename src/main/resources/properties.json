@@ -1,0 +1,114 @@
+{
+  "appProperties": {
+    "title": "CBlogServerUI",
+    "icon": "icon.png",
+    "height": 350,
+    "width": 350,
+    "author": {
+      "author": "Kristopher Clark",
+      "authorEmail": "krisclarkdev@krisbox.org",
+      "copyrite": "2017",
+      "license": "MIT"
+    },
+    "menu": [{
+      "name": "File",
+      "display": "File",
+      "hotkey": "VK_F",
+      "subitems": [{
+        "name": "Exit",
+        "display": "Exit",
+        "hotkey": "VK_X"
+      }]
+    },
+      {
+        "name": "Help",
+        "display": "Help",
+        "hotkey": "VK_H",
+        "subitems": [{
+          "name": "About",
+          "display": "About",
+          "hotkey": "VK_A"
+        }]
+      }
+    ],
+    "toolbar": [{
+      "name": "Codeblock",
+      "display": "icon",
+      "hotkey": "",
+      "icon": "\uf121",
+      "shortcode": "code",
+      "fontpack": "solid"
+    },
+      {
+        "name": "Quoteblock",
+        "display": "icon",
+        "hotkey": "",
+        "icon": "\uf10d",
+        "shortcode": "quote",
+        "translated": "pre",
+        "fontpack": "solid"
+      },
+      {
+        "name": "Link",
+        "display": "icon",
+        "hotkey": "",
+        "icon": "\uf0c1",
+        "shortcode": "link",
+        "translated": "pre",
+        "fontpack": "solid"
+      },
+      {
+        "name": "Separator"
+      },
+      {
+        "name": "Preview",
+        "display": "icon",
+        "hotkey": "",
+        "icon": "\uf13b",
+        "translated": "pre",
+        "fontpack": "brands"
+      }
+    ],
+    "shortcodes": [{
+      "code": "code",
+      "regex": {
+        "start": "\\[code\\]",
+        "end": "\\[/code\\]"
+      },
+      "html": {
+        "start": "<code>",
+        "end": "</code>"
+      }
+    }, {
+      "code": "quote",
+      "regex": {
+        "start": "\\[quote\\]",
+        "end": "\\[/quote\\]"
+      },
+      "html": {
+        "start": "<quote>",
+        "end": "</quote>"
+      }
+    }, {
+      "code": "link",
+      "regex": {
+        "start": "\\[link url=\"\"\\]",
+        "end": "\\[/link\\]"
+      },
+      "html": {
+        "start": "<a href=\"\">",
+        "end": "</a>"
+      }
+    }],
+    "formatting":[{
+      "regex": "\\n",
+      "html": "<br/>"
+    }],
+    "preview": {
+      "title": "Post Preview",
+      "header": "Review your work below",
+      "copiedHeader": "Copied to clipboard",
+      "copiedText": "Your HTML has been copied to the clipboard"
+    }
+  }
+}

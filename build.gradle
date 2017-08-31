@@ -1,0 +1,33 @@
+group 'CBlogServerUI'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply from: './gradle.properties'
+
+sourceCompatibility = javaCompat
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile group: androidUtilGroup,        name: androidUtilArtifact,        version: androidUtilVersion
+    compile group: jacksonCoreGroup,        name: jacksonCoreArtifact,        version: jacksonCoreVersion
+    compile group: jacksonDataBindGroup,    name: jacksonDataBindArtifact,    version: jacksonDataBindVersion
+    compile group: jacksonAnnotationsGroup, name: jacksonAnnotationsArtifact, version: jacksonAnnotationsVersion
+    compile group: apacheCommonsGroup,      name: apacheCommonsArtifact,      version: apacheCommonsVersion
+    compile group: apacheCommonsIOGroup,    name: apacheCommonsIOArtifact,    version: apacheCommonsIOVersion
+}
+
+jar {
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes("Main-Class": "org.krisbox.cblogserver.App" )
+    }
+}
